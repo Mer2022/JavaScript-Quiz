@@ -1,7 +1,5 @@
 # JavaScript-Quiz
 
-JavaScript-Quiz
-04 Web APIs: Code Quiz
 
 My Task
 
