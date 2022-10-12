@@ -22,5 +22,6 @@ Mock-Up
 The following animation demonstrates the application functionality:
 
 Link
+![image](https://user-images.githubusercontent.com/112989286/195242941-adab45a6-4f88-409d-805b-4613d231f68d.png)
 
 Image
