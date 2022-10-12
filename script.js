@@ -1,4 +1,5 @@
-// Bringing HTML elements together for manipulation
+
+// Adding HTML elements together for use
 var quizBody = document.getElementById("quiz");
 var resultsEl = document.getElementById("result");
 var finalScoreEl = document.getElementById("finalScore");
@@ -19,56 +20,62 @@ var buttonB = document.getElementById("b");
 var buttonC = document.getElementById("c");
 var buttonD = document.getElementById("d");
 
-// Quiz questions
+// Questions included in Quiz
 var quizQuestions = [{
-    question: "Inside which HTML element do we put the JavaScript?",
-    choiceA: "< scripting >",
-    choiceB: "< js >",
-    choiceC: "< script >",
-    choiceD: "< javascript >",
+    question: "Which of the following keywords is used to define a variable in JavaScript?",
+    choiceA: "var",
+    choiceB: "let",
+    choiceC: "both A and B",
+    choiceD: "none of the above",
     correctAnswer: "c"},
-  {
-    question: "Where is the correct place to insert a JavaScript?",
-    choiceA: "The < head > section",
-    choiceB: "The < footer > section",
-    choiceC: "the < body > section",
-    choiceD: "both a and b",
+ 
+    {
+    question: "Which of the following methods is used to access HTML elements using JavaScript?",
+    choiceA: "getElementbyId()",
+    choiceB: "getElementsByClassName()",
+    choiceC: "Both A and B",
+    choiceD: "none of the above",
     correctAnswer: "c"},
-   {
-    question: "How do you write `Hello World` in an alert box?",
-    choiceA: "msg(`Hello World`);",
-    choiceB: "msgBox(`Hello World`);",
-    choiceC: "alertBox(`Hello World`);",
-    choiceD: "alert(`Hello World`);",
+   
+    {
+    question: "Upon encountering empty statements, what does the JavaScript Interpreter do?",
+    choiceA: "Throws an error",
+    choiceB: "Ignores the statements",
+    choiceC: "Gives a warning",
+    choiceD: "None of the above",
+    correctAnswer: "b"},
+    
+    {
+    question: "Which of the following methods can be used to display data in some form using JavaScript?",
+    choiceA: "document.write()",
+    choiceB: "console.log()",
+    choiceC: "window.alert()",
+    choiceD: "All of the above",
     correctAnswer: "d"},
+    
     {
-    question: "How to write an IF statement in JavaScript?",
-    choiceA: "if i == 5 then",
-    choiceB: "if i = 5",
-    choiceC: "if i = 5 then",
-    choiceD: "if (i == 5)",
-    correctAnswer: "d"},
+    question: "How can a datatype be declared to be a constant type?",
+    choiceA: "const",
+    choiceB: "var",
+    choiceC: "let",
+    choiceD: "constant",
+    correctAnswer: "a"},  
+    
     {
-    question: "How does a WHILE loop start?",
-    choiceA: "while i = 1 to 10",
-    choiceB: "while (i <= 10)",
-    choiceC: "while (i <= 10; i++)",
-    choiceD: "None of the answers above",
-    correctAnswer: "b"},  
-    {
-    question: "How does a FOR loop start?",
-    choiceA: "for (i = 0; i <= 5)",
-    choiceB: "for (i <= 5; i++)",
-    choiceC: "for i = 1 to 5",
-    choiceD: "for (i = 0; i <= 5; i++)",
-    correctAnswer: "d"},
-    {
-    question: "How can you add a comment in a JavaScript?",
-    choiceA: "`This is a comment",
-    choiceB: "< !--This is a comment-- >",
-    choiceC: "//This is a comment",
-    choiceD: "#This is a comment#",
+    question: "When an operator's value is NULL, the typeof returned by the unary operator is?",
+    choiceA: "Boolean",
+    choiceB: "Undefined",
+    choiceC: "Object",
+    choiceD: "Integer",
     correctAnswer: "c"},
+   
+    {
+    question: "Which function is used to serialize an object into a JSON string in JavaScript",
+    choiceA: "stringify()",
+    choiceB: "parse()",
+    choiceC: "convert()",
+    choiceD: "None of the above",
+    correctAnswer: "a"},
         
     
     ];
@@ -80,7 +87,7 @@ var timerInterval;
 var score = 0;
 var correct;
 
-// This function will cycle through the object array containing the quiz questions to generate the questions and answers.
+// The following function is used to cycle through the object array that contains the quiz questions so that it can generate the questions and answers.
 function generateQuizQuestion(){
     gameoverDiv.style.display = "none";
     if (currentQuestionIndex === finalQuestionIndex){
@@ -94,13 +101,13 @@ function generateQuizQuestion(){
     buttonD.innerHTML = currentQuestion.choiceD;
 };
 
-// Start Quiz function starts the TimeRanges, hides the start button, and displays the first quiz question.
+// The Start Quiz function gets the TimeRanges started, displays the first quiz question and hides the Start button.
 function startQuiz(){
     gameoverDiv.style.display = "none";
     startQuizDiv.style.display = "none";
     generateQuizQuestion();
 
-    //Timer
+    //Information for Timer
     timerInterval = setInterval(function() {
         timeLeft--;
         quizTimer.textContent = "Seconds left: " + timeLeft;
@@ -112,7 +119,8 @@ function startQuiz(){
       }, 1000);
     quizBody.style.display = "block";
 }
-// This function will show score after completing quiz.
+
+// This function allows quiz score to be revealed after quiz completion.
 function showScore(){
     quizBody.style.display = "none"
     gameoverDiv.style.display = "flex";
@@ -213,5 +221,5 @@ function checkAnswer(answer){
     }
 }
 
-// This button will start the quiz
+// This button allows the quiz to start.
 startQuizButton.addEventListener("click",startQuiz);
