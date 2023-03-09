@@ -31,7 +31,7 @@ THEN I can save my initials and my score
 
 
 ## Image
-![Screenshot](./Assets/Screenshot.1.JPG)
+![Screenshot](./Assets/Screenshot.PNG)
 
 
 ## Deployed Link
